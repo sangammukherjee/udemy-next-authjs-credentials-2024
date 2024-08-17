@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+import Loading from "./loading";
+
 function AuthLayout({ children }) {
   return (
     <div>
@@ -10,7 +13,7 @@ function AuthLayout({ children }) {
               className="h-full w-full max-md:w-4/5 mx-auto block object-cover"
             />
           </div>
-          {children}
+          <Suspense fallback={<Loading />}> {children}</Suspense>
         </div>
       </div>
     </div>
